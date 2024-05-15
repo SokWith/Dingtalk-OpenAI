@@ -3,13 +3,13 @@ log_level: "info"
 # 运行模式，http 或者 stream ，强烈建议你使用stream模式，通过此链接了解：https://open.dingtalk.com/document/isvapp/stream
 run_mode: "stream"
 # openai api_key,如果你是用的是azure，则该配置项可以留空或者直接忽略
-api_key: "xxxxxxxxx"
+api_key: ""
 # 如果你使用官方的接口地址 https://api.openai.com，则留空即可，如果你想指定请求url的地址，可通过这个参数进行配置，注意需要带上 http 协议，如果你是用的是azure，则该配置项可以留空或者直接忽略
-base_url: ""
+base_url: "https://hfcf.nbing.eu.org/api"
 # 指定模型，默认为 gpt-3.5-turbo , 可选参数有："gpt-4-32k-0613", "gpt-4-32k-0314", "gpt-4-32k", "gpt-4-0613", "gpt-4-0314", "gpt-4-turbo-preview", "gpt-4-vision-preview", "gpt-4", "gpt-3.5-turbo-1106", "gpt-3.5-turbo-0613", "gpt-3.5-turbo-0301", "gpt-3.5-turbo-16k", "gpt-3.5-turbo-16k-0613", "gpt-3.5-turbo"，如果使用gpt-4，请确认自己是否有接口调用白名单，如果你是用的是azure，则该配置项可以留空或者直接忽略
-model: "gpt-3.5-turbo"
+model: "gpt-4-32k"
 # 指定绘画模型，默认为 dall-e-2 , 可选参数有："dall-e-2"， "dall-e-3"
-image_model: "dall-e-2"
+image_model: "dall-e-3"
 # 会话超时时间,默认600秒,在会话时间内所有发送给机器人的信息会作为上下文
 session_timeout: 600
 # 最大问题长度
@@ -27,7 +27,7 @@ max_request: 0
 # 指定服务启动端口，默认为 8090，一般在二进制宿主机部署时，遇到端口冲突时使用，如果run_mode为stream模式，则可以忽略该配置项
 port: "8090"
 # 指定服务的地址，就是当前服务可供外网访问的地址(或者直接理解为你配置在钉钉回调那里的地址)，用于生成图片时给钉钉做渲染，最新版本中将图片上传到了钉钉服务器，理论上你可以忽略该配置项，如果run_mode为stream模式，则可以忽略该配置项
-service_url: "http://xxxxxx"
+service_url: "https://bdtk.nbing.eu.org"
 # 限定对话类型 0：不限 1：只能单聊 2：只能群聊
 chat_type: "0"
 # 哪些群组可以进行对话（仅在chat_type为0、2时有效），如果留空，则表示允许所有群组，如果要限制，则列表中写群ID（ConversationID）
