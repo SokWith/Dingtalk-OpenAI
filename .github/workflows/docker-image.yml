@@ -58,8 +58,8 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           # 给清单打上多个标签
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk:${{ env.GITHUB_REF_NAME }}
-            ${{ secrets.DOCKERHUB_USERNAME }}/chatgpt-dingtalk:latest
+            docker.io/jokyo2/chatgpt-dingtalk:${{ env.GITHUB_REF_NAME }}
+            docker.io/jokyo2/chatgpt-dingtalk:latest
 
       # 镜像推送到 阿里云仓库
       - name: Login to the Ali Registry
