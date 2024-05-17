@@ -25,5 +25,5 @@ func isModelSupportedChatCompletions(model string) bool {
 			return true
 		}
 	}
-	return false
+	return true
 }
