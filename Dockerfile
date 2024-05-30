@@ -7,17 +7,18 @@ ADD . /app/
 WORKDIR /app
 RUN go build -o chatgpt-dingtalk .
 
-FROM alpine:3.16
+#FROM alpine:3.16
+FROM node:alpine
 ARG TZ="Asia/Shanghai"
 
-RUN apk update && apk upgrade \
-      && apk add python3 g++ make linux-headers openssl \
-      && wget https://nodejs.org/dist/v20.3.0/node-v20.3.0.tar.gz \
-      && tar xzvf node-v20.3.0.tar.gz \
-      && cd node-v20.3.0 \
-      && ./configure \
-      && make -j4 \
-      && make install
+#RUN apk update && apk upgrade \
+#      && apk add python3 g++ make linux-headers openssl \
+#      && wget https://nodejs.org/dist/v20.3.0/node-v20.3.0.tar.gz \
+#      && tar xzvf node-v20.3.0.tar.gz \
+#      && cd node-v20.3.0 \
+#      && ./configure \
+#      && make -j4 \
+#      && make install
 
 ENV TZ ${TZ}
 
